@@ -54,4 +54,6 @@ class SampleMongoServiceTest {
         List<BoardsEntity> list = service.selectTitle("the");
         System.out.println(list.size());
     }
+
+
 }

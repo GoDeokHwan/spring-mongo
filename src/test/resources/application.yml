@@ -1,0 +1,11 @@
+de:
+  flap-doodle:
+    mongodb:
+      embedded:
+        version: 3.6.5
+
+spring:
+  data:
+    mongodb:
+      port: 27017
+      database: test
