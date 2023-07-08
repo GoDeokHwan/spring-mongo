@@ -13,5 +13,5 @@ import java.util.List;
 public interface BoardsRepository extends MongoRepository<BoardsEntity, ObjectId> {
 
 //    @Query("{ name: /?0/ }")
-    List<BoardsEntity> findAllByNameLike(String title);
+    List<BoardsEntity> findByNameLike(String title);
 }

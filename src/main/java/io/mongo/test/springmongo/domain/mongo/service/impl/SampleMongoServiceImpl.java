@@ -17,19 +17,20 @@ import java.util.List;
 public class SampleMongoServiceImpl implements SampleMongoService {
 
     private final BoardsRepository boardsRepository;
-    private final MongoTemplate mongoTemplate;
+//    private final MongoTemplate mongoTemplate;
     @Override
-    public void insertBoard(String name, String body, String writer) {
+    public BoardsEntity insertBoard(String name, String body, String writer) {
         BoardsEntity boards = BoardsEntity.ofCreate(name, body, writer);
-        boardsRepository.save(boards);
+        ReflectionU
+        return boardsRepository.save(boards);
     }
 
     @Override
     public List<BoardsEntity> selectTitle(String name) {
         Query query = new Query();
         query.addCriteria(Criteria.where("name").regex(name));
-        return mongoTemplate.find(query, BoardsEntity.class);
-//        return boardsRepository.findAllByNameLike(name);
+//        return mongoTemplate.find(query, BoardsEntity.class);
+        return boardsRepository.findByNameLike(name);
     }
 
 
